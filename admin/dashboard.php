@@ -25,7 +25,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
             background-color: #f4f6f9;
         }
 
-        /* === CARD ANIMATION === */
+        /* CARD ANIMATION */
         .menu-card {
             border-radius: 18px;
             text-decoration: none;
@@ -49,7 +49,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
         .menu-card:nth-child(3) { animation-delay: .3s; }
         .menu-card:nth-child(4) { animation-delay: .4s; }
 
-        /* === ICON === */
+        /* ICON */
         .menu-icon {
             width: 68px;
             height: 68px;
@@ -69,7 +69,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
             box-shadow: 0 10px 25px rgba(0,0,0,0.25);
         }
 
-        /* === ANIMASI KEYFRAMES === */
+        /* ANIMASI KEYFRAMES */
         @keyframes fadeUp {
             from {
                 opacity: 0;
