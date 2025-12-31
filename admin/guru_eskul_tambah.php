@@ -79,6 +79,7 @@ if (isset($_POST['simpan'])) {
 </head>
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar navbar-dark bg-primary">
     <div class="container-fluid">
         <span class="navbar-brand fw-bold">
@@ -92,7 +93,6 @@ if (isset($_POST['simpan'])) {
         <div class="col-md-6">
             <div class="card shadow-sm">
                 <div class="card-body">
-
                     <?php if (isset($error)): ?>
                         <div class="alert alert-danger"><?= $error ?></div>
                     <?php endif; ?>
@@ -151,5 +151,6 @@ if (isset($_POST['simpan'])) {
     </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
