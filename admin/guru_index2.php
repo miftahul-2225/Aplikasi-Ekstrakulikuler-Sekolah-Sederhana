@@ -30,7 +30,7 @@ if (!$query) {
     <title>Data Guru</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap -->
+     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
@@ -55,22 +55,21 @@ if (!$query) {
         <span class="navbar-brand fw-bold">
             <i class="bi bi-people-fill"></i> Admin Eskul
         </span>
-        <a href="dashboard.php" class="btn btn-info btn-sm">
-            <i class="bi bi-arrow-left"></i> Dashboard
+        <a href="dashboard.php" class="btn btn-danger btn-sm">
+            Kembali <i class="bi bi-door-open-fill"></i>
         </a>
     </div>
 </nav>
 
 <!-- CONTENT -->
 <div class="container mt-4">
-
     <div class="d-flex justify-content-between align-items-center mb-3">
         <div>
             <h3 class="mb-0">Data Guru</h3>
             <small class="text-muted">Daftar seluruh guru</small>
         </div>
         <div class="d-flex gap-2">
-            <a href="guru_barutambah.php" class="btn btn-primary">
+            <a href="guru_tambah.php" class="btn btn-primary">
                 <i class="bi bi-plus-circle"></i> Tambah Guru
             </a>
             <a href="guru_index.php" class="btn btn-success">
