@@ -84,14 +84,12 @@ if (isset($_POST['simpan'])) {
         <span class="navbar-brand fw-bold">
             <i class="bi bi-person-lines-fill"></i> Tambah Guru Eskul
         </span>
-        <a href="guru_index.php" class="btn btn-danger btn-sm">Kembali</a>
     </div>
 </nav>
 
 <div class="container mt-4">
     <div class="row justify-content-center">
         <div class="col-md-6">
-
             <div class="card shadow-sm">
                 <div class="card-body">
 
@@ -146,12 +144,9 @@ if (isset($_POST['simpan'])) {
                                 <i class="bi bi-save"></i> Simpan
                             </button>
                         </div>
-
                     </form>
-
                 </div>
             </div>
-
         </div>
     </div>
 </div>
