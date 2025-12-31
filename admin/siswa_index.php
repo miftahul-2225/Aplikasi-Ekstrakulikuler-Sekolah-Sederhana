@@ -37,6 +37,7 @@ $query = mysqli_query($koneksi, "
 </head>
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar navbar-dark bg-primary shadow-sm">
     <div class="container-fluid">
         <span class="navbar-brand fw-bold">
@@ -117,7 +118,7 @@ $query = mysqli_query($koneksi, "
             </div>
         </div>
     </div>
-
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
