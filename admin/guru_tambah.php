@@ -32,7 +32,6 @@ if (isset($_POST['simpan'])) {
     <meta charset="UTF-8">
     <title>Tambah Guru Baru</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -42,7 +41,6 @@ if (isset($_POST['simpan'])) {
 </head>
 <body>
 
-<!-- Navbar -->
 <nav class="navbar navbar-dark bg-primary">
     <div class="container-fluid">
         <span class="navbar-brand fw-bold">
@@ -61,8 +59,7 @@ if (isset($_POST['simpan'])) {
                     <?php if (isset($error)): ?>
                         <div class="alert alert-danger"><?= $error ?></div>
                     <?php endif; ?>
-                    
-                    <!-- Form -->
+
                     <form method="POST">
                         <h4 class="text-center">Form Tambah Guru Baru </h4>
                         
