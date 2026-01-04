@@ -65,7 +65,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
         }
 
         .menu-card:hover .menu-icon {
-            transform: rotate(8deg) scale(1.15);
+            transform: rotate(2deg) scale(1.15);
             box-shadow: 0 10px 25px rgba(0,0,0,0.25);
         }
 
@@ -93,7 +93,9 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
         </span>
         <span class="text-white">
             <?= $_SESSION['username'] ?? 'Admin'; ?>
-            <a href="../landing_page.php" class="btn btn-danger ms-3">Logout</a>
+            <a href="../landing_page.php" class="btn btn-danger ms-3">
+                Logout <i class="bi bi-door-open-fill"></i>
+            </a>
         </span>
     </div>
 </nav>
@@ -152,7 +154,6 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
 
     </div>
 </div>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
