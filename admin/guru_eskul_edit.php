@@ -80,7 +80,9 @@ if (isset($_POST['simpan'])) {
                         <div class="card shadow-sm">
                             <div class="card-body">
                                 <form method="POST">
-                                    <h4 class="text-center">Edit Data Guru Eskul</h4>
+                                    <h4 class="text-center">
+                                        <i class="bi bi-pencil-square"></i> Edit Data Guru Eskul
+                                    </h4>
                                     <div class="mb-3">
                                         <label class="form-label">Nama Guru</label>
                                         <input type="text" class="form-control" value="<?= $row['nama_guru'] ?>" readonly>
