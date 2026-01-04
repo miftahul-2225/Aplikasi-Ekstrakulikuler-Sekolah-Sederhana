@@ -41,7 +41,6 @@ if (isset($_POST['simpan'])) {
 </head>
 <body>
 
-<!--NAVBAR -->
 <nav class="navbar navbar-dark bg-primary">
     <div class="container-fluid">
         <span class="navbar-brand fw-bold">
