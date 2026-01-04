@@ -80,7 +80,7 @@ if (!$query) {
             <i class="bi bi-plus-circle"></i> Tambah Guru Eskul
         </a>
         <a href="guru_index2.php" class="btn btn-success">
-            <i class="bi bi-people-fill"></i> Lihat Data Guru
+            <i class="bi bi-people-fill"></i> Data Guru
         </a>
         </div>
     </div>
@@ -159,12 +159,9 @@ if (!$query) {
                     </tbody>
                 </table>
             </div>
-
         </div>
     </div>
-
 </div>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
