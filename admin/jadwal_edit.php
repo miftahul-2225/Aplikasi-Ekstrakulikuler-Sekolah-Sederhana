@@ -54,57 +54,65 @@ if (isset($_POST['update'])) {
 </head>
 <body>
 
-<div class="container mt-4 col-md-6">
-    <div class="card shadow-sm">
-        <div class="card-body">
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container-fluid">
+            <span class="navbar-brand fw-bold">
+                <i class="bi bi-person-lines-fill"></i> Edit Data Jadwal eskul
+            </span>
+        </div>
+    </nav>
 
-            <h5 class="mb-3">Edit Jadwal Eskul</h5>
+    <div class="container mt-4 col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h4 class="text-center">
+                    <i class="bi bi-pencil-square"></i> Edit Jadwal Eskul
+                </h4>
+                <form method="POST">
 
-            <form method="POST">
+                    <!-- Eskul -->
+                    <label class="form-label">Ekstrakurikuler</label>
+                    <select name="id_eskul" class="form-select mb-3" required>
+                        <?php while ($e = mysqli_fetch_assoc($dataEskul)): ?>
+                            <option value="<?= $e['id_eskul'] ?>"
+                                <?= $e['id_eskul'] == $data['id_eskul'] ? 'selected' : '' ?>>
+                                <?= htmlspecialchars($e['nama_eskul']) ?>
+                            </option>
+                        <?php endwhile; ?>
+                    </select>
 
-                <!-- Eskul -->
-                <label class="form-label">Ekstrakurikuler</label>
-                <select name="id_eskul" class="form-select mb-3" required>
-                    <?php while ($e = mysqli_fetch_assoc($dataEskul)): ?>
-                        <option value="<?= $e['id_eskul'] ?>"
-                            <?= $e['id_eskul'] == $data['id_eskul'] ? 'selected' : '' ?>>
-                            <?= htmlspecialchars($e['nama_eskul']) ?>
-                        </option>
-                    <?php endwhile; ?>
-                </select>
+                    <!-- Hari -->
+                    <label class="form-label">Hari</label>
+                    <input type="text" name="hari" class="form-control mb-3"
+                        value="<?= htmlspecialchars($data['hari']) ?>" required>
 
-                <!-- Hari -->
-                <label class="form-label">Hari</label>
-                <input type="text" name="hari" class="form-control mb-3"
-                       value="<?= htmlspecialchars($data['hari']) ?>" required>
-
-                <!-- Jam -->
-                <div class="row mb-3">
-                    <div class="col">
-                        <label class="form-label">Jam Mulai</label>
-                        <input type="time" name="jam_mulai" class="form-control"
-                               value="<?= $data['jam_mulai'] ?>" required>
+                    <!-- Jam -->
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label class="form-label">Jam Mulai</label>
+                            <input type="time" name="jam_mulai" class="form-control"
+                                value="<?= $data['jam_mulai'] ?>" required>
+                        </div>
+                        <div class="col">
+                            <label class="form-label">Jam Selesai</label>
+                            <input type="time" name="jam_selesai" class="form-control"
+                                value="<?= $data['jam_selesai'] ?>" required>
+                        </div>
                     </div>
-                    <div class="col">
-                        <label class="form-label">Jam Selesai</label>
-                        <input type="time" name="jam_selesai" class="form-control"
-                               value="<?= $data['jam_selesai'] ?>" required>
+
+                    <!-- Button -->
+                    <div class="d-flex justify-content-end gap-2">
+                        <a href="jadwal_index.php" class="btn btn-secondary">Batal</a>
+                        <button name="update" class="btn btn-primary">
+                            Update Jadwal
+                        </button>
                     </div>
-                </div>
 
-                <!-- Button -->
-                <div class="d-flex justify-content-end gap-2">
-                    <a href="jadwal_index.php" class="btn btn-secondary">Batal</a>
-                    <button name="update" class="btn btn-primary">
-                        Update Jadwal
-                    </button>
-                </div>
+                </form>
 
-            </form>
-
+            </div>
         </div>
     </div>
-</div>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
