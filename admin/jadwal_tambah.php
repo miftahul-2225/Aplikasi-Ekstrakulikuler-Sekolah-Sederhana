@@ -35,68 +35,79 @@ if(isset($_POST['simpan'])){
 </head>
 <body>
 
-<div class="container mt-4 col-md-6">
-    <div class="card shadow-sm">
-        <div class="card-body">
-            <h5>Tambah Jadwal Eskul</h5>
-            <form method="POST">
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container-fluid">
+            <span class="navbar-brand fw-bold">
+                <i class="bi bi-person-plus-fill"></i> Tambah Jadwal Eskul
+            </span>
+        </div>
+    </nav>
 
-                <div class="mb-3">
-                    <label>Ekstrakurikuler</label>
-                    <select name="id_eskul" class="form-select" required>
-                        <option value="">-- Pilih Eskul --</option>
-                        <?php while($e=mysqli_fetch_assoc($dataEskul)): ?>
-                            <option value="<?= $e['id_eskul'] ?>"><?= $e['nama_eskul'] ?></option>
-                        <?php endwhile; ?>
-                    </select>
-                </div>
+    <div class="container mt-4 col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h4>Form Tambah Jadwal Eskul</h4>
+                <form method="POST">
 
-                <div class="mb-3">
-                    <label>Guru</label>
-                    <select name="id_guru" class="form-select" required>
-                        <option value="">-- Pilih Guru --</option>
-                        <?php while($g=mysqli_fetch_assoc($dataGuru)): ?>
-                            <option value="<?= $g['id_guru'] ?>"><?= $g['nama_guru'] ?></option>
-                        <?php endwhile; ?>
-                    </select>
-                </div>
-
-                <div class="mb-3">
-                    <label>Hari</label>
-                    <select name="hari" class="form-select" required>
-                        <option>Senin</option>
-                        <option>Selasa</option>
-                        <option>Rabu</option>
-                        <option>Kamis</option>
-                        <option>Jumat</option>
-                        <option>Sabtu</option>
-                    </select>
-                </div>
-
-                <div class="row">
-                    <div class="col">
-                        <label>Jam Mulai</label>
-                        <input type="time" name="jam_mulai" class="form-control" required>
+                    <div class="mb-3">
+                        <label>Ekstrakurikuler</label>
+                        <select name="id_eskul" class="form-select" required>
+                            <option value="">-- Pilih Eskul --</option>
+                            <?php while($e=mysqli_fetch_assoc($dataEskul)): ?>
+                                <option value="<?= $e['id_eskul'] ?>"><?= $e['nama_eskul'] ?></option>
+                            <?php endwhile; ?>
+                        </select>
                     </div>
-                    <div class="col">
-                        <label>Jam Selesai</label>
-                        <input type="time" name="jam_selesai" class="form-control" required>
-                    </div>
-                </div>
 
-                <div class="mb-3 mt-3">
-                    <label>Tempat</label>
-                    <input type="text" name="tempat" class="form-control" required>
-                </div>
-                <div class="text-end">
-                    <a href="jadwal_index.php" class="btn btn-secondary">Batal</a>
-                    <button name="simpan" class="btn btn-primary">
-                        <i class="bi bi-save"></i> Simpan
-                    </button>
-                </div>
-            </form>
+                    <div class="mb-3">
+                        <label>Guru</label>
+                        <select name="id_guru" class="form-select" required>
+                            <option value="">-- Pilih Guru --</option>
+                            <?php while($g=mysqli_fetch_assoc($dataGuru)): ?>
+                                <option value="<?= $g['id_guru'] ?>"><?= $g['nama_guru'] ?></option>
+                            <?php endwhile; ?>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Hari</label>
+                        <select name="hari" class="form-select" required>
+                            <option>Senin</option>
+                            <option>Selasa</option>
+                            <option>Rabu</option>
+                            <option>Kamis</option>
+                            <option>Jumat</option>
+                            <option>Sabtu</option>
+                        </select>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label>Jam Mulai</label>
+                            <input type="time" name="jam_mulai" class="form-control" required>
+                        </div>
+                        <div class="col">
+                            <label>Jam Selesai</label>
+                            <input type="time" name="jam_selesai" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 mt-3">
+                        <label>Tempat</label>
+                        <input type="text" name="tempat" class="form-control" required>
+                    </div>
+
+                    <div class="text-end">
+                        <a href="jadwal_index.php" class="btn btn-secondary">Batal</a>
+                        <button name="simpan" class="btn btn-primary">
+                            <i class="bi bi-save"></i> Simpan
+                        </button>
+                    </div>
+
+                </form>
+            </div>
         </div>
     </div>
-</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
