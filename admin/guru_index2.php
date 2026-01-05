@@ -35,16 +35,6 @@ if (!$query) {
 
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
-    <style>
-        .table-hover tbody tr {
-            transition: all .25s ease;
-        }
-        .table-hover tbody tr:hover {
-            background-color: #f8f9fa;
-            transform: scale(1.01);
-        }
-    </style>
 </head>
 
 <body>
