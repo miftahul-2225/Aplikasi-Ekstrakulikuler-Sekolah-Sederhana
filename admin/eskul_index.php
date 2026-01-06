@@ -62,7 +62,7 @@ if (!$eskul) {
                     <tr>
                         <th>No</th>
                         <th>Nama Eskul</th>
-                        <th class="text-center">Aksi</th>
+                        <th width="15%" class="text-center">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
