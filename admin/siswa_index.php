@@ -58,6 +58,7 @@ $query = mysqli_query($koneksi, "
                     <thead class="table-light">
                         <tr>
                             <th>No</th>
+                            <th>NISN</th>
                             <th>Nama Siswa</th>
                             <th>Kelas</th>
                             <th>Jenis Kelamin</th>
@@ -70,6 +71,7 @@ $query = mysqli_query($koneksi, "
                         <?php $no = 1; while ($row = mysqli_fetch_assoc($query)): ?>
                         <tr>
                             <td><?= $no++ ?></td>
+                            <td><?= htmlspecialchars($row['id_siswa']) ?></td>
                             <td><?= htmlspecialchars($row['nama_siswa']) ?></td>
                             <td><?= htmlspecialchars($row['kelas']) ?></td>
                             <td>
