@@ -7,8 +7,8 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
     header('Location: ../login.php');
     exit;
 }
-// Query semua data eskul
 
+// Query semua data eskul
 $eskul = mysqli_query($koneksi, 
 "SELECT * FROM tb_eskul ORDER BY id_eskul DESC");
 
@@ -74,7 +74,7 @@ if (!$eskul) {
                         <td><?= $no++; ?></td>
                         <td><?= htmlspecialchars($row['nama_eskul']); ?></td>
                         <td class="text-center">
-                            <a href="eskul_edit.php?id=<?= $row['id_eskul']; ?>" class="btn btn-sm btn-warning">
+                            <a href="eskul_edit.php?id_eskul=<?= $row['id_eskul']; ?>" class="btn btn-sm btn-warning">
                                 <i class="bi bi-pencil-fill"></i> Edit
                             </a>
                             <a href="eskul_hapus.php?id=<?= $row['id_eskul']; ?>" 
