@@ -67,41 +67,42 @@ if (isset($_POST['simpan'])) {
 </nav>
 
 <div class="container mt-4">
-    <div class="card shadow-sm rounded-4">
-        <div class="card-body">
-            <h4 class="mb-3 text-center">
-                <i class="bi bi-pencil-square"></i> Edit Data Guru
-            </h4>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                 <div class="card-body">
+                        <h4 class="mb-3 text-center">
+                        <i class="bi bi-pencil-square"></i> Edit Data Guru
+                        </h4>
 
-            <form method="POST">
-                <div class="mb-3">
-                    <label class="form-label">Nama Guru</label>
-                    <input type="text" name="nama_guru" class="form-control"
-                           value="<?= htmlspecialchars($guru['nama_guru']) ?>" required>
+                        <form method="POST">
+                        <div class="mb-3">
+                        <label class="form-label">Nama Guru</label>
+                        <input type="text" name="nama_guru" class="form-control"
+                            value="<?= htmlspecialchars($guru['nama_guru']) ?>" required>
+                        </div>
+                        <div class="mb-3">
+                        <label class="form-label">Jenis Kelamin</label>
+                        <select name="jenis_kelamin" class="form-select" required>
+                            <option value="Laki-Laki" <?= $guru['jenis_kelamin']=='Laki-Laki'?'selected':'' ?>>
+                                Laki-Laki
+                            </option>
+                            <option value="Perempuan" <?= $guru['jenis_kelamin']=='Perempuan'?'selected':'' ?>>
+                                Perempuan
+                            </option>
+                        </select>
+                        </div>
+                        <div class="d-flex justify-content-end gap-2">
+                        <a href="guru_index2.php" class="btn btn-secondary">
+                            Batal
+                        </a>
+                        <button type="submit" name="simpan" class="btn btn-primary">
+                            <i class="bi bi-save"></i> Simpan
+                        </button>
+                        </div>
+                        </form>
                 </div>
-
-                <div class="mb-3">
-                    <label class="form-label">Jenis Kelamin</label>
-                    <select name="jenis_kelamin" class="form-select" required>
-                        <option value="Laki-Laki" <?= $guru['jenis_kelamin']=='Laki-Laki'?'selected':'' ?>>
-                            Laki-Laki
-                        </option>
-                        <option value="Perempuan" <?= $guru['jenis_kelamin']=='Perempuan'?'selected':'' ?>>
-                            Perempuan
-                        </option>
-                    </select>
-                </div>
-
-                <div class="d-flex justify-content-end gap-2">
-                    <a href="guru_index2.php" class="btn btn-secondary">
-                        Batal
-                    </a>
-                    <button type="submit" name="simpan" class="btn btn-primary">
-                        <i class="bi bi-save"></i> Simpan
-                    </button>
-                </div>
-            </form>
-
+            </div>
         </div>
     </div>
 </div>
