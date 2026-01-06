@@ -1,16 +1,12 @@
 <?php
-// echo "FILE EDIT TERBUKA";
-// exit;
 session_start();
 require '../koneksi.php';
 
-// Proteksi admin
-if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
     header('Location: ../login.php');
     exit;
 }
 
-// Validasi parameter
 if (!isset($_GET['id_eskul'])) {
     header('Location: eskul_index.php');
     exit;
@@ -18,23 +14,19 @@ if (!isset($_GET['id_eskul'])) {
 
 $id_eskul = intval($_GET['id_eskul']);
 
-// Ambil data eskul
-$query = mysqli_query($koneksi, "SELECT * FROM tb_eskul WHERE id_eskul = $id_eskul");
+$data = mysqli_query($koneksi, "SELECT * FROM tb_eskul WHERE id_eskul = $id_eskul");
+$eskul = mysqli_fetch_assoc($data);
 
-if (mysqli_num_rows($query) == 0) {
-    header('Location: eskul_index.php');
-    exit;
+if (!$eskul) {
+    die('Data eskul tidak ditemukan');
 }
 
-$eskul = mysqli_fetch_assoc($query);
-
-// Simpan perubahan
 if (isset($_POST['simpan'])) {
     $nama_eskul = mysqli_real_escape_string($koneksi, $_POST['nama_eskul']);
 
     $update = mysqli_query($koneksi, "
-        UPDATE tb_eskul 
-        SET nama_eskul = '$nama_eskul'
+        UPDATE tb_eskul SET
+        nama_eskul = '$nama_eskul'
         WHERE id_eskul = $id_eskul
     ");
 
