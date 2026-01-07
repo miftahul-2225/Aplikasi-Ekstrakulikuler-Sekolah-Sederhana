@@ -10,7 +10,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'guru') {
 
 $idGuru = $_SESSION['id_guru'];
 
-/* ===================== DATA GURU ===================== */
+/* DATA GURU */
 $guruQuery = mysqli_query($koneksi, "
     SELECT * FROM tb_guru WHERE id_guru='$idGuru'
 ");
@@ -19,7 +19,7 @@ if (!$guru) {
     die('Data guru tidak ditemukan');
 }
 
-/* ===================== ESKUL YANG DILATIH ===================== */
+/* ESKUL YANG DILATIH */
 $eskulQuery = mysqli_query($koneksi, "
     SELECT DISTINCT e.id_eskul, e.nama_eskul, r.nama_role
     FROM tb_guru_eskul ge
@@ -28,7 +28,7 @@ $eskulQuery = mysqli_query($koneksi, "
     WHERE ge.id_guru='$idGuru'
 ");
 
-/* ===================== JADWAL ===================== */
+/* JADWAL */
 $jadwalQuery = mysqli_query($koneksi, "
     SELECT j.*, e.nama_eskul
     FROM tb_jadwal j
@@ -38,7 +38,7 @@ $jadwalQuery = mysqli_query($koneksi, "
     ORDER BY j.hari, j.jam_mulai
 ");
 
-/* ===================== SISWA ===================== */
+/* SISWA */
 $siswaQuery = mysqli_query($koneksi, "
     SELECT DISTINCT s.id_siswa, s.nama_siswa, e.nama_eskul
     FROM tb_siswa_eskul se
@@ -69,7 +69,7 @@ $siswaQuery = mysqli_query($koneksi, "
     <nav class="navbar navbar-dark bg-primary shadow-sm">
         <div class="container-fluid">
             <span class="navbar-brand fw-bold">
-                <i class="bi bi-person-badge"></i> Dashboard Guru
+                <i class="bi bi-person-fill"></i> Dashboard Guru
             </span>
             <div>
             <span class="text-white">Halo</span>
@@ -83,7 +83,7 @@ $siswaQuery = mysqli_query($koneksi, "
         </div>
     </nav>
 
-<div class="container mt-4">
+    <div class="container mt-4">
     <!-- ESKUL -->
     <div class="card shadow-sm mb-4">
         <div class="card-header bg-success text-white">
@@ -177,6 +177,6 @@ $siswaQuery = mysqli_query($koneksi, "
         </div>
     </div>
     </div>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
