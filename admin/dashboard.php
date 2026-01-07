@@ -84,76 +84,73 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
 </head>
 
 <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-dark bg-primary shadow-sm">
+        <div class="container-fluid">
+            <span class="navbar-brand fw-bold">
+                <i class="bi bi-people-fill"></i> Admin Eskul
+            </span>
+            <span class="text-white">
+                <?= $_SESSION['username'] ?? 'Admin'; ?>
+                <a href="../landing_page.php" class="btn btn-danger ms-3">
+                    Logout <i class="bi bi-door-open-fill"></i>
+                </a>
+            </span>
+        </div>
+    </nav>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-dark bg-primary shadow-sm">
-    <div class="container-fluid">
-        <span class="navbar-brand fw-bold">
-            <i class="bi bi-people-fill"></i> Admin Eskul
-        </span>
-        <span class="text-white">
-            <?= $_SESSION['username'] ?? 'Admin'; ?>
-            <a href="../landing_page.php" class="btn btn-danger ms-3">
-                Logout <i class="bi bi-door-open-fill"></i>
-            </a>
-        </span>
+    <!-- CONTENT -->
+    <div class="container mt-4">
+        <h3 class="mb-1">Dashboard Admin</h3>
+        <p class="text-muted mb-4">Menu manajemen data ekstrakurikuler di sekolah</p>
+        <div class="row">
+
+            <!-- Guru -->
+            <div class="col-md-3 col-sm-6 mb-4">
+                <a href="guru_index.php" class="menu-card card shadow-sm border-0 text-center p-4">
+                    <div class="menu-icon bg-success mx-auto">
+                        <i class="bi bi-person-badge fs-3"></i>
+                    </div>
+                    <h5 class="fw-bold">Data Guru</h5>
+                    <small class="text-muted">Kelola Guru Pembina</small>
+                </a>
+            </div>
+
+            <!-- Siswa -->
+            <div class="col-md-3 col-sm-6 mb-4">
+                <a href="siswa_index.php" class="menu-card card shadow-sm border-0 text-center p-4">
+                    <div class="menu-icon bg-warning mx-auto">
+                        <i class="bi bi-people-fill fs-3"></i>
+                    </div>
+                    <h5 class="fw-bold">Data Siswa</h5>
+                    <small class="text-muted">Kelola Data Siswa</small>
+                </a>
+            </div>
+
+            <!-- Eskul -->
+            <div class="col-md-3 col-sm-6 mb-4">
+                <a href="eskul_index.php" class="menu-card card shadow-sm border-0 text-center p-4">
+                    <div class="menu-icon bg-primary mx-auto">
+                        <i class="bi bi-collection fs-3"></i>
+                    </div>
+                    <h5 class="fw-bold">Data Eskul</h5>
+                    <small class="text-muted">Kelola Ekstrakurikuler</small>
+                </a>
+            </div>
+
+            <!-- Jadwal -->
+            <div class="col-md-3 col-sm-6 mb-4">
+                <a href="jadwal_index.php" class="menu-card card shadow-sm border-0 text-center p-4">
+                    <div class="menu-icon bg-danger mx-auto">
+                        <i class="bi bi-calendar-event-fill fs-3"></i>
+                    </div>
+                    <h5 class="fw-bold">Jadwal Eskul</h5>
+                    <small class="text-muted">Atur Jadwal Kegiatan</small>
+                </a>
+            </div>
+        </div>
     </div>
-</nav>
 
-<!-- CONTENT -->
-<div class="container mt-4">
-
-    <h3 class="mb-1">Dashboard Admin</h3>
-    <p class="text-muted mb-4">Menu manajemen data ekstrakurikuler di sekolah</p>
-
-    <div class="row">
-
-        <!-- Guru -->
-        <div class="col-md-3 col-sm-6 mb-4">
-            <a href="guru_index.php" class="menu-card card shadow-sm border-0 text-center p-4">
-                <div class="menu-icon bg-success mx-auto">
-                    <i class="bi bi-person-badge fs-3"></i>
-                </div>
-                <h5 class="fw-bold">Data Guru</h5>
-                <small class="text-muted">Kelola Guru Pembina</small>
-            </a>
-        </div>
-
-        <!-- Siswa -->
-        <div class="col-md-3 col-sm-6 mb-4">
-            <a href="siswa_index.php" class="menu-card card shadow-sm border-0 text-center p-4">
-                <div class="menu-icon bg-warning mx-auto">
-                    <i class="bi bi-people-fill fs-3"></i>
-                </div>
-                <h5 class="fw-bold">Data Siswa</h5>
-                <small class="text-muted">Kelola Data Siswa</small>
-            </a>
-        </div>
-
-        <!-- Eskul -->
-        <div class="col-md-3 col-sm-6 mb-4">
-            <a href="eskul_index.php" class="menu-card card shadow-sm border-0 text-center p-4">
-                <div class="menu-icon bg-primary mx-auto">
-                    <i class="bi bi-collection fs-3"></i>
-                </div>
-                <h5 class="fw-bold">Data Eskul</h5>
-                <small class="text-muted">Kelola Ekstrakurikuler</small>
-            </a>
-        </div>
-
-        <!-- Jadwal -->
-        <div class="col-md-3 col-sm-6 mb-4">
-            <a href="jadwal_index.php" class="menu-card card shadow-sm border-0 text-center p-4">
-                <div class="menu-icon bg-danger mx-auto">
-                    <i class="bi bi-calendar-event-fill fs-3"></i>
-                </div>
-                <h5 class="fw-bold">Jadwal Eskul</h5>
-                <small class="text-muted">Atur Jadwal Kegiatan</small>
-            </a>
-        </div>
-
-    </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
