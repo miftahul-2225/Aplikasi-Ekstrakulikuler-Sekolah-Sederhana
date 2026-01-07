@@ -76,6 +76,7 @@ if (!$query) {
                     <thead class="table-light">
                         <tr>
                             <th width="5%">No</th>
+                            <th>NIP</th>
                             <th>Nama Guru</th>
                             <th>Jenis Kelamin</th>
                             <th width="15%" class="text-center">Aksi</th>
@@ -88,6 +89,7 @@ if (!$query) {
                         <?php while ($row = mysqli_fetch_assoc($query)): ?>
                             <tr>
                                 <td><?= $no++ ?></td>
+                                <td><?= htmlspecialchars($row['id_guru']) ?></td>
                                 <td><?= htmlspecialchars($row['nama_guru']) ?></td>
                                 <td>
                                     <?php if ($row['jenis_kelamin'] == 'Laki-Laki'): ?>
