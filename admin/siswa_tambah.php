@@ -9,12 +9,13 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
 
 if (isset($_POST['simpan'])) {
     mysqli_query($koneksi, "
-        INSERT INTO tb_siswa (nama_siswa, kelas, alamat, jenis_kelamin)
+        INSERT INTO tb_siswa (id_siswa, nama_siswa, kelas, alamat, jenis_kelamin)
         VALUES (
+            '$_POST[id_siswa]',
             '$_POST[nama_siswa]',
             '$_POST[kelas]',
             '$_POST[alamat]',
-            '$_POST[jenis_kelamin]'
+            '$_POST[jenis_kelamin]'        
         )
     ");
     header("Location: siswa_index.php");
@@ -38,8 +39,9 @@ if (isset($_POST['simpan'])) {
 <!-- NAVBAR -->
 <nav class="navbar navbar-dark bg-primary">
     <div class="container-fluid">
-        <span class="navbar-brand fw-bold">Tambah Siswa</span>
-        <a href="siswa_index.php" class="btn btn-light btn-sm">Kembali</a>
+        <span class="navbar-brand fw-bold">
+            <i class="bi bi-person-plus-fill"></i> Tambah Siswa
+        </span>
     </div>
 </nav>
 
@@ -48,6 +50,11 @@ if (isset($_POST['simpan'])) {
         <div class="card shadow-sm">
             <div class="card-body">
                 <form method="POST">
+                    <h4 class="text-center">Form Tambah Siswa Baru</h4>
+                    <div class="mb-3">
+                        <label>NISN</label>
+                        <input type="number" name="id_siswa" class="form-control" required>
+                    </div>
                     <div class="mb-3">
                         <label>Nama Siswa</label>
                         <input type="text" name="nama_siswa" class="form-control" required>
@@ -69,6 +76,7 @@ if (isset($_POST['simpan'])) {
                         <textarea name="alamat" class="form-control"></textarea>
                     </div>
                     <div class="text-end">
+                        <a href="siswa_index.php" class="btn btn-secondary"> Batal</a>
                         <button name="simpan" class="btn btn-primary">
                             <i class="bi bi-save"></i> Simpan
                         </button>
@@ -78,6 +86,6 @@ if (isset($_POST['simpan'])) {
         </div>
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
