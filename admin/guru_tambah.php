@@ -13,11 +13,12 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
 if (isset($_POST['simpan'])) {
     $namaguru = $_POST['namaguru'];
     $jeniskelamin = $_POST['jeniskelamin'];
+    $nip = $_POST['nip'];
 
     // Simpan
     $insert = mysqli_query($koneksi, "
-        INSERT INTO tb_guru (nama_guru, jenis_kelamin)
-        VALUES ('$namaguru', '$jeniskelamin')
+        INSERT INTO tb_guru (id_guru, nama_guru, jenis_kelamin)
+        VALUES ('$nip', '$namaguru', '$jeniskelamin')
     ");
 
     if (!$insert) {
@@ -61,7 +62,11 @@ if (isset($_POST['simpan'])) {
 
                     <form method="POST">
                         <h4 class="text-center">Form Tambah Guru Baru </h4>
-                        
+                        <div class="mb-3">
+                            <label for="nip">NIP</label>
+                            <input type="number" class="form-control mt-2" id="nip" name="nip" required placeholder="Masukkan NIP">
+                        </div>
+                 
                         <!-- Nama Guru -->
                         <div class="mb-3">
                             <label for="namaguru">Nama Lengkap</label>
@@ -78,7 +83,7 @@ if (isset($_POST['simpan'])) {
                             </select>
                         
                         <div class="d-flex justify-content-end gap-2 mt-3">
-                            <a href="guru_index.php" class="btn btn-secondary">Batal</a>
+                            <a href="guru_index2.php" class="btn btn-secondary">Batal</a>
                             <button type="submit" name="simpan" class="btn btn-primary">
                                 <i class="bi bi-save"></i> Simpan
                             </button>
